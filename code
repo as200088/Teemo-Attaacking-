@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int findPoisonedDuration(vector<int>& time, int duration) {
+        int n=time.size();
+        int dur=duration-1;
+        int c=0;
+        int i;
+        for(i=0;i<n-1;i++)
+        {
+            if(time[i]+dur>=time[i+1])
+            {
+                
+;                c+=(time[i+1]-time[i]);
+            }
+            else
+                c+=duration;
+        }
+        if(i==n-1)
+            c+=duration;
+        return c;
+    }
+};
